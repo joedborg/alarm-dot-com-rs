@@ -1,0 +1,33 @@
+[package]
+name = "alarm-dot-com"
+version = "0.1.0"
+edition = "2024"
+description = "Rust library for interfacing with Alarm.com security panels"
+license = "MIT"
+repository = "https://github.com/joedborg/alarm-dot-com-rs"
+documentation = "https://docs.rs/alarm-dot-com"
+keywords = ["alarm", "security", "smart-home", "alarm-dot-com", "adt"]
+categories = ["api-bindings", "network-programming"]
+
+[dependencies]
+reqwest = { version = "0.12", features = ["cookies", "rustls-tls", "json"] }
+scraper = "0.22"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+url = "2"
+regex = "1"
+
+[dev-dependencies]
+tracing-subscriber = { version = "0.3.22", features = ["env-filter"] }
+
+
+[[example]]
+name = "status"
+path = "examples/status.rs"
+
+[[example]]
+name = "arm"
+path = "examples/arm.rs"
